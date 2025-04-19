@@ -1,0 +1,89 @@
+.error-message {
+    background-color: #f8d7da; /* Светлый красный фон */
+    color: #721c24; /* Тёмный красный для текста */
+    border: 1px solid #f5c6cb; /* Рамка красного цвета */
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+.course-details-wrapper {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.course-header h1 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.course-section {
+    margin-bottom: 2rem;
+}
+
+.course-section h3 {
+    font-size: 1.25rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.3rem;
+}
+
+.course-section p {
+    font-size: 1rem;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .course-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .course-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-card {
+        padding: 1.2rem;
+    }
+
+    .course-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .course-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .course-section p {
+        font-size: 0.95rem;
+    }
+}
