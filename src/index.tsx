@@ -14,5 +14,4 @@ root.render(
     </React.StrictMode>
 );
 
-// Отправка метрик производительности (необязательно)
 reportWebVitals();

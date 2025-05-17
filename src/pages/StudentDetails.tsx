@@ -38,15 +38,32 @@ const StudentDetails = () => {
                 <div className="student-header">
                     <h1>{student.fullName}</h1>
                     <Link to="/students" className="btn secondary">
-                        ← Назад к списку
+                        <span>Назад к списку</span>
                     </Link>
                 </div>
+
+                {student.photoUrl && (
+                    <div className="student-photo">
+                        <img src={student.photoUrl} alt={student.fullName} />
+                    </div>
+                )}
 
                 <div className="student-section">
                     <h3>Контактная информация</h3>
                     <ul>
                         <li><strong>Email:</strong> {student.email}</li>
+                        <li><strong>Телефон:</strong> {student.phone}</li>
+                        <li><strong>Город:</strong> {student.city}</li>
                         <li><strong>Возраст:</strong> {student.age}</li>
+                    </ul>
+                </div>
+
+                <div className="student-section">
+                    <h3>Обучение</h3>
+                    <ul>
+                        <li><strong>Формат:</strong> {student.format}</li>
+                        <li><strong>Успеваемость:</strong> {student.performance}</li>
+                        <li><strong>Прогресс прохождения курса:</strong> {student.progress}%</li>
                     </ul>
                 </div>
 
@@ -57,13 +74,6 @@ const StudentDetails = () => {
                         <li><strong>Уровень:</strong> {student.course.level}</li>
                         <li><strong>Стоимость:</strong> {formatPrice(student.course.price)}</li>
                     </ul>
-                </div>
-
-                <div className="student-section">
-                    <h3>Успеваемость</h3>
-                    <span className={`performance-badge ${student.performance.replace(/\s+/g, '-').toLowerCase()}`}>
-                        {student.performance}
-                    </span>
                 </div>
             </div>
         </div>

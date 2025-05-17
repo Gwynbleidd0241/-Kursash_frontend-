@@ -27,6 +27,21 @@
     margin-bottom: 1rem;
 }
 
+.student-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.student-photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
 .student-section {
     margin-bottom: 2rem;
 }
@@ -69,11 +84,21 @@
     .student-header h1 {
         font-size: 1.6rem;
     }
+
+    .student-photo img {
+        width: 140px;
+        height: 140px;
+    }
 }
 
 @media (max-width: 480px) {
     .student-card {
         padding: 1.2rem;
+    }
+
+    .student-header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
     }
 
     .student-header h1 {
@@ -86,5 +111,10 @@
 
     .student-section li {
         font-size: 0.95rem;
+    }
+
+    .student-photo img {
+        width: 120px;
+        height: 120px;
     }
 }

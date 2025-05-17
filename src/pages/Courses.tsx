@@ -42,16 +42,22 @@ const Courses = () => {
             <div className="page-header">
                 <h1>Управление курсами</h1>
                 <div className="actions-group">
-                    <Link to="/" className="btn secondary">
-                        Назад
-                    </Link>
                     <Link to="/courses/new" className="btn primary">
                         + Новый курс
+                    </Link>
+                    <Link to="/" className="btn secondary">
+                        ← Назад
                     </Link>
                 </div>
             </div>
 
-            {error && <Notification type="error" message={error} onClose={() => setError('')} />}
+            {error && (
+                <Notification
+                    type="error"
+                    message={error}
+                    onClose={() => setError('')}
+                />
+            )}
 
             <div className="courses-grid">
                 {courses.map((course) => (

@@ -6,13 +6,12 @@ import Loader from '../components/Loader';
 import { formatPrice } from '../utils/helpers';
 
 const CourseDetails = () => {
-    const { id } = useParams<{ id: string }>();
+    const { id } = useParams();
     const [course, setCourse] = useState<Course | null>(null);
     const [loading, setLoading] = useState(true);
 
-    // Получаем информацию о том, с какой страницы пришли
     const location = useLocation();
-    const from = location.state?.from || '/courses'; // Если нет состояния, возвращаем на страницу курсов
+    const from = location.state?.from || '/courses';
 
     useEffect(() => {
         const loadData = async () => {
@@ -39,31 +38,56 @@ const CourseDetails = () => {
             <div className="course-card">
                 <div className="course-header">
                     <h1>{course.title}</h1>
-                    <Link to={from} className="btn secondary">
-                        ← Назад
-                    </Link>
+                    <div className="course-buttons mobile-priority">
+                        <Link to={`/courses/${course.id}/edit`} className="btn primary">
+                            ✎ Редактировать
+                        </Link>
+                        <Link to={from} className="btn secondary">
+                            ← Назад
+                        </Link>
+                    </div>
                 </div>
 
-                <div className="course-section">
-                    <h3>Уровень</h3>
-                    <p>{course.level}</p>
-                </div>
+
 
                 <div className="course-section">
-                    <h3>Стоимость</h3>
-                    <p>{formatPrice(course.price)}</p>
-                </div>
-
-                <div className="course-section">
-                    <h3>Продолжительность</h3>
-                    <p>{course.duration} часов</p>
-                </div>
-
-                <div className="course-section">
-                    <h3>Полное описание</h3>
-                    <p>{course.full_description}</p>
-                </div>
+                <h3>Основная информация</h3>
+                <ul className="course-info-list">
+                    <li><strong>Уровень:</strong> {course.level}</li>
+                    <li><strong>Стоимость:</strong> {formatPrice(course.price)}</li>
+                    <li><strong>Продолжительность:</strong> {course.duration} ч</li>
+                    <li><strong>Рейтинг:</strong> {course.rating} ★</li>
+                </ul>
             </div>
+
+            <div className="course-section">
+                <h3>Описание</h3>
+                <p>{course.full_description}</p>
+            </div>
+
+            <div className="course-section">
+                <h3>Для кого курс</h3>
+                <p>{course.targetAudience}</p>
+            </div>
+
+            <div className="course-section">
+                <h3>Начальные требования</h3>
+                <p>{course.prerequisites}</p>
+            </div>
+
+            <div className="course-section">
+                <h3>Преподаватель</h3>
+                <p>{course.instructor}</p>
+            </div>
+
+            <div className="course-section">
+                <h3>Материалы курса</h3>
+                <a href={course.materialsUrl} target="_blank" rel="noopener noreferrer">
+                    Перейти к материалам
+                </a>
+            </div>
+
+        </div>
         </div>
     );
 };

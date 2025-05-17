@@ -1,7 +1,7 @@
 import apiRequest from './api';
 import { Course, CoursePayload } from '../types';
 
-const API_BASE = 'https://67fd6f5f3da09811b175b728.mockapi.io/api/v1';
+const API_BASE = 'https://681e251bc1c291fa66332e95.mockapi.io/api/lazarus';
 
 export const fetchCourses = async (): Promise<Course[]> => {
     return apiRequest<Course[]>('courses');

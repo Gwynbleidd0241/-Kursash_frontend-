@@ -19,6 +19,22 @@
     color: var(--dark);
     margin: 0 0 1rem;
     line-height: 1.4;
+    order: -1;
+}
+.course-image-wrapper {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+
+.course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .course-info {
@@ -115,10 +131,14 @@
         -webkit-line-clamp: 2;
     }
 
+    .actions {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
     .details-link,
     .delete-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        width: 35%;
     }
 }
 

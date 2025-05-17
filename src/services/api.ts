@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://67fd6f5f3da09811b175b728.mockapi.io/api/v1';
+const API_BASE_URL = 'https://681e251bc1c291fa66332e95.mockapi.io/api/lazarus';
 
 const handleResponse = async <T>(response: Response): Promise<T> => {
     if (!response.ok) {

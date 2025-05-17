@@ -37,7 +37,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard-container">
             <LogoutButton />
-            <h1>Добро пожаловать в Gwynbleidd!</h1>
+            <h1>Административная панель Gwynbleidd</h1>
             <div className="stats-grid">
                 <StatsCard
                     title="Курсов на платформе"

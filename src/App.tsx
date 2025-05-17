@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Loader from './components/Loader';
 import ProtectedRoute from './components/ProtectedRoute';
 import './styles/index.css';
@@ -52,6 +52,12 @@ const App: React.FC = () => {
                     <Route path="/students/:id" element={
                         <ProtectedRoute>
                             <StudentDetails />
+                        </ProtectedRoute>
+                    } />
+
+                    <Route path="/courses/:id/edit" element={
+                        <ProtectedRoute>
+                            <CourseForm />
                         </ProtectedRoute>
                     } />
 

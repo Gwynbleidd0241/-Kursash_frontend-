@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Student } from '../types';
+import { renderLoadByLevel } from '../utils/performanceHelpers';
 
 interface Props {
     student: Student;
@@ -14,9 +15,7 @@ const StudentTableRow = ({ student }: Props) => (
                 {student.course.title}
             </Link>
         </td>
-        <td className={`performance ${student.performance.replace(' ', '-')}`}>
-            {student.performance}
-        </td>
+        <td>{renderLoadByLevel(student.course.level)}</td>
         <td>
             <Link to={`/students/${student.id}`} className="action-link">
                 Просмотр
